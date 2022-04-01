@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Creator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src='scripts/main.js'></script>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="btn-group dropright">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Itens
+          </button>
+        <div id="items " class="dropdown-menu">
+            <button onclick="reset()" class="btnReset">Reset Layout</button>
+            <button onclick="saveStaticDataToFile()" class="btnExport">Export Layout</button>
+            <input type="text" name="idTxt" id="idTxt" maxlength="10" placeholder="Set an Id">
+            <input type="text" name="txt" id="txt" maxlength="10" placeholder="Set a Text">
+            <input type="text" name="classTxt" id="classTxt" maxlength="10" placeholder="Set a Class">
+            <label for="width">Set Width</label>
+            <input type="number" name="width" id="width" placeholder="Width" min="2">
+            <label for="height">Set height</label>
+            <input type="number" name="height" id="height" placeholder="Height" max="2">
+
+            <div class="dropdown border">
+                <li class="sub-menu">
+                    <a href="#" class="dropdown-item dropdown-toggle" data-toggle="dropdown">
+                        Border
+                    </a>
+                    <ul class="dropdown-menu border-menu">
+                        <label for="thickness" class="dropdown-item">Set Border Thickness</label>
+                        <input type="number" name="thickness" id="thickness" class="dropdown-item" placeholder="Thickness">
+                        <label for="radius" class="dropdown-item">Set Border Radius</label>
+                        <input type="number" name="radius" class="dropdown-item" id="radius" placeholder="Radius">
+                        <div id="borderColor">
+                            <label for="colorPickBorder">Set Border Color</label>
+                            <input type="color" name="colorPickBorder" id="colorPickBorder">
+                        </div>
+
+                    </ul>
+                </li>
+            </div>
+            <!--
+            <div id="borderProperties" class="dropdown-menu">
+                <label for="thickness" class="dropdown-item">Set Border Thickness</label>
+                <input type="number" name="thickness" id="thickness" class="dropdown-item" placeholder="Thickness">
+                <label for="radius" class="dropdown-item">Set Border Radius</label>
+                <input type="number" name="radius" class="dropdown-item" id="radius" placeholder="Radius">
+                <label for="colorPickBorder">Set Border Color</label>
+                <input type="color" name="colorPickBorder" id="colorPickBorder">
+            </div>
+-->
+            <div id="backgroundColor">
+                <label for="colorPick">Set Background</label>
+                <input type="color" name="colorPick" id="colorPick">
+            </div>
+
+
+            <div id="itemsToPick">
+                <label for="itemsToPick">items To Pick</label>
+                <div class="startItem" id="start" draggable="true"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="drop-targets">
+            <div class="box">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

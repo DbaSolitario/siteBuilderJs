@@ -1,0 +1,112 @@
+* {
+    border: 0;
+    padding: 0;
+}
+
+.item {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+}
+
+.selected {
+    border: 2px red dashed;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+.dropdown-toggle {
+    position: absolute !important;
+}
+
+.box {
+    padding: 0;
+    border: 1px solid black;
+    width: 98vw;
+    height: 94vh;
+}
+
+.drop-targets {
+    /*
+    float: left;
+    width: 80vw;
+    height: 90vh;
+    */
+}
+
+.startItem {
+    width: 90%;
+    height: 5%;
+    margin: 2px auto;
+    background-color: black;
+}
+
+.btnReset,
+#idTxt,
+#txt,
+#classTxt,
+.btnExport,
+.border {
+    width: 90%;
+    height: 5%;
+    margin: 5px 5px;
+    padding: 0 0 0 2px;
+}
+
+#width,
+#height,
+#thickness,
+#radius {
+    width: 90%;
+    height: 5%;
+    margin: 1px 5px;
+    padding: 0 0 0 2px;
+}
+
+label {
+    margin-bottom: 1px;
+}
+
+.btnReset:hover,
+#colorPick:hover,
+#start:hover,
+.btnExport:hover,
+.border:hover {
+    cursor: pointer;
+}
+
+#colorPick,
+#colorPickBorder {
+    width: 40px;
+    height: 40px;
+}
+
+#backgroundColor,
+#borderColor {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#start {
+    width: 90%;
+    height: 30px;
+}
+
+input[type=text],
+input[type=number] {
+    border: 1px black solid;
+    padding: 2px !important;
+    border-radius: 2px;
+}
+
+.sub-menu:hover .border-menu {
+    display: block;
+}
+
+.sub-menu>.dropdown-item {
+    position: inherit !important;
+}
