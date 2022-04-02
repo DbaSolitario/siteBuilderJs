@@ -28,14 +28,6 @@
     height: 94vh;
 }
 
-.drop-targets {
-    /*
-    float: left;
-    width: 80vw;
-    height: 90vh;
-    */
-}
-
 .startItem {
     width: 90%;
     height: 5%;
@@ -103,10 +95,23 @@ input[type=number] {
     border-radius: 2px;
 }
 
-.sub-menu:hover .border-menu {
+.itemsMenu {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 100px;
+}
+
+.sub-menu {
+    list-style: none;
+}
+
+.sub-menu:hover .border-menu,
+.itemsMenu:hover .border-menu-Itens {
     display: block;
 }
 
-.sub-menu>.dropdown-item {
+.sub-menu>.dropdown-item,
+.itemsMenu:hover .border-menu-Itens {
     position: inherit !important;
 }

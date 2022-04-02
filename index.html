@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src='scripts/main.js'></script>
     <link rel="stylesheet" href="styles/style.css">
@@ -24,7 +25,6 @@
 <body>
     <div class="btn-group dropright">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Itens
           </button>
         <div id="items " class="dropdown-menu">
             <button onclick="reset()" class="btnReset">Reset Layout</button>
@@ -35,7 +35,7 @@
             <label for="width">Set Width</label>
             <input type="number" name="width" id="width" placeholder="Width" min="2">
             <label for="height">Set height</label>
-            <input type="number" name="height" id="height" placeholder="Height" max="2">
+            <input type="number" name="height" id="height" placeholder="Height" min="2">
 
             <div class="dropdown border">
                 <li class="sub-menu">
@@ -55,16 +55,6 @@
                     </ul>
                 </li>
             </div>
-            <!--
-            <div id="borderProperties" class="dropdown-menu">
-                <label for="thickness" class="dropdown-item">Set Border Thickness</label>
-                <input type="number" name="thickness" id="thickness" class="dropdown-item" placeholder="Thickness">
-                <label for="radius" class="dropdown-item">Set Border Radius</label>
-                <input type="number" name="radius" class="dropdown-item" id="radius" placeholder="Radius">
-                <label for="colorPickBorder">Set Border Color</label>
-                <input type="color" name="colorPickBorder" id="colorPickBorder">
-            </div>
--->
             <div id="backgroundColor">
                 <label for="colorPick">Set Background</label>
                 <input type="color" name="colorPick" id="colorPick">
@@ -76,6 +66,18 @@
                 <div class="startItem" id="start" draggable="true"></div>
             </div>
         </div>
+    </div>
+
+    <div class="dropdown itemsMenu">
+        <li class="sub-menu">
+            <a href="#" class="dropdown-item dropdown-toggle" data-toggle="dropdown">
+                Itens
+            </a>
+            <ul class="dropdown-menu border-menu-Itens">
+                <li class="itensListCreated" id="itensListCreated">
+                </li>
+            </ul>
+        </li>
     </div>
 
     <div class="container-fluid">

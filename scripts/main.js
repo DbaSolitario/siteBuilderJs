@@ -66,7 +66,12 @@ $(document).ready(function() {
             reset()
     });
 
-    //.addEventListener('click', itemClick);
+    document.getElementById("itensListCreated").addEventListener("mouseover", function(e) {
+        if ($(`#${e.target.innerHTML}`) != null && $(`#${e.target.innerHTML}`) != undefined) {
+            itemClick(e)
+
+        }
+    })
 
     /* draggable element */
     const item = document.querySelector('.item');
@@ -151,6 +156,9 @@ $(document).ready(function() {
             item.style.border = border;
             item.style.borderRadius = $("#radius").val() + "px";
             item.style.backgroundColor = $("#colorPick").val()
+
+            $(".itensListCreated").append(`<li class="item_${item.id}">${item.id}</li>`)
+
             item.classList.add("item")
 
             if ($("#classTxt").val() != "") {
@@ -165,7 +173,11 @@ $(document).ready(function() {
             //Changing left and right information
             draggable.style.left = xPercent + "%";
             draggable.style.top = yPercent + "%";
+            $(`.item_${draggable.id}`).remove()
             draggable.setAttribute("id", "box_" + xPercent.toFixed(0) + "_" + yPercent.toFixed(0))
+
+            $(".itensListCreated").append(`<li class="item_${draggable.id}">${draggable.id}</li>`)
+
             draggable.addEventListener('dragstart', dragStart);
             if (draggable != e.target)
                 e.target.appendChild(draggable);
@@ -220,6 +232,10 @@ $(document).ready(function() {
         })
 
         var item = document.getElementById(e.target.id)
+
+        if (item == undefined)
+            item = document.getElementById(e.target.innerHTML)
+
         $("#width").val(item.style.width.substring(0, item.style.width.length - 2));
         $("#height").val(item.style.height.substring(0, item.style.height.length - 2));
         var itemBgd = item.style.backgroundColor.substring(4, item.style.backgroundColor.length - 1).split(',');
